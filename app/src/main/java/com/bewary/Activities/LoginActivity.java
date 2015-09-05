@@ -1,6 +1,7 @@
 package com.bewary.Activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
@@ -57,6 +58,9 @@ public class LoginActivity extends AppCompatActivity {
                     .setActionTextColor(Color.RED)
                     .show();
         }
+
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
 
         InputMethodManager inputManager = (InputMethodManager) this.getSystemService(Context.INPUT_METHOD_SERVICE);
         inputManager.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
