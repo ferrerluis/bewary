@@ -1,13 +1,25 @@
 package com.bewary.Models;
 
 public class User {
-    private int id;
+
     private String name;
     private String email;
-    private String imageURL;
+    private String picture;
 
-    public int getId() {
-        return id;
+    public User() {
+    }
+
+    public User(String name, String email) {
+
+        this.name = name;
+        this.email = email;
+        this.picture = null;
+    }
+
+    public User(String name, String email, String picture) {
+
+        this(name, email);
+        this.picture = picture;
     }
 
     public String getName() {
@@ -19,6 +31,6 @@ public class User {
     }
 
     public String getImageURL() {
-        return imageURL;
+        return picture;
     }
 }

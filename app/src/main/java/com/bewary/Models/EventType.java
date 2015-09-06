@@ -1,12 +1,17 @@
 package com.bewary.Models;
 
 public class EventType {
-    private int id;
+
     private String name;
     private int level;
 
-    public int getId() {
-        return id;
+    public EventType() {
+    }
+
+    public EventType(String name, int level) {
+
+        this.name = name;
+        this.level = level;
     }
 
     public String getName() {
