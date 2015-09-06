@@ -5,8 +5,6 @@ import android.location.Location;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 import com.bewary.Map.MapInfoPane;
 import com.bewary.Models.Event;
 import com.bewary.R;
@@ -21,24 +19,29 @@ import java.util.Locale;
 public class OnEventClickListener implements GoogleMap.OnMapClickListener {
 
     private ArrayList<Event> events;
-    private View v;
+    private View mapView;
     private Context context;
     private MapInfoPane mapInfoPane;
 
-    public OnEventClickListener(ArrayList<Event> events, View v, Context context) {
+    public OnEventClickListener(ArrayList<Event> events, View mapView, Context context) {
         this.events = events;
-        this.v = v;
+        this.mapView = mapView;
         this.context = context;
-        mapInfoPane = new MapInfoPane(v, context);
+        mapInfoPane = new MapInfoPane(mapView, context);
     }
 
     @Override
     public void onMapClick(LatLng latLng) {
-        if(v.findViewById(R.id.card_view) != null){
-            (v.findViewById(R.id.card_view)).startAnimation(AnimationUtils.loadAnimation(context, R.anim.bottom_down));
-            (v.findViewById(R.id.card_view)).setVisibility(View.INVISIBLE);
-            ((ViewGroup) v).removeView(v.findViewById(R.id.card_view));
-            v.findViewById(R.id.fab).animate().translationY(0).setDuration(500);
+        if(mapView.findViewById(R.id.card_view) != null){
+            (mapView.findViewById(R.id.card_view)).startAnimation(AnimationUtils.loadAnimation(context, R.anim.bottom_down));
+            (mapView.findViewById(R.id.card_view)).setVisibility(View.INVISIBLE);
+            ((ViewGroup) mapView.findViewById(R.id.map_bottom_info_pane)).removeAllViews();
+        }
+
+        if(mapView.findViewById(R.id.add_event_comment_layout) != null){
+            mapView.findViewById(R.id.add_event_comment_layout).startAnimation(AnimationUtils.loadAnimation(context, R.anim.top_up));
+            mapView.findViewById(R.id.add_event_comment_layout).setVisibility(View.INVISIBLE);
+            ((ViewGroup) mapView.findViewById(R.id.map_top_info_pane)).removeAllViews();
         }
 
         for(Event event: events){

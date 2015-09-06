@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                    android:id="@+id/add_event_comment_layout"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="0dp"
+                                    card_view:cardBackgroundColor="@color/material_blue_grey_800">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+              android:paddingBottom="15dp"
+            android:paddingLeft="25dp"
+              android:paddingRight="25dp">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView
+                android:id="@+id/add_event_comment_close_btn"
+                android:layout_width="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:paddingRight="20dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_close"
+                android:contentDescription="Close add comment"/>
+    </RelativeLayout>
+
+    <EditText
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            android:backgroundTint="#fff"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_event_comment_text"
+            android:hint="Add a comment"/>
+    <Button android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:id="@+id/add_event_comment_submit"
+            android:text="Add Comment"/>
+</LinearLayout>
+    </android.support.v7.widget.CardView>

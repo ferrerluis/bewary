@@ -10,22 +10,19 @@
               tools:context=".MapsActivity"
               android:name="com.google.android.gms.maps.SupportMapFragment"/>
 
+    <RelativeLayout android:id="@+id/map_top_info_pane"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+            android:layout_gravity="top">
+
+    </RelativeLayout>
     <RelativeLayout
-            android:id="@+id/map_info_pane"
+            android:id="@+id/map_bottom_info_pane"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom">
 
     </RelativeLayout>
-    <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_marginBottom="8dp"
-            android:layout_marginRight="8dp"
-            android:src="@drawable/fab_add"
-            />
 
 </FrameLayout>
 
