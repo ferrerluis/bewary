@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
 import com.bewary.Listeners.OnEventClickListener;
+import com.bewary.Listeners.OnIntentToCreateEvent;
 import com.bewary.Models.Event;
 import com.bewary.Models.EventType;
 import com.bewary.Models.User;
@@ -69,6 +70,33 @@ public class MapActivity extends FragmentActivity implements GoogleApiClient.Con
 
         events.add(new Event(
                 new EventType("Homelessness", 1),
+                new com.bewary.Models.Location(mLastLocation.getLatitude()- .15, mLastLocation.getLongitude() + .45),
+                new Date(),
+                new User("jane", "bob@gmail.com", "image.jpg"),
+                "Sarah Taylor was harassed by a homeless person yesterday. Take 4th Ave. to avoid this area."));
+
+        events.add(new Event(
+                new EventType("Homelessness", 1),
+                new com.bewary.Models.Location(mLastLocation.getLatitude()+ .35, mLastLocation.getLongitude() + .2948),
+                new Date(),
+                new User("jane", "bob@gmail.com", "image.jpg"),
+                "Sarah Taylor was harassed by a homeless person yesterday. Take 4th Ave. to avoid this area."));
+
+        events.add(new Event(
+                new EventType("Homelessness", 1),
+                new com.bewary.Models.Location(mLastLocation.getLatitude()- .65, mLastLocation.getLongitude() + .3599),
+                new Date(),
+                new User("jane", "bob@gmail.com", "image.jpg"),
+                "Sarah Taylor was harassed by a homeless person yesterday. Take 4th Ave. to avoid this area."));
+        events.add(new Event(
+                new EventType("Homelessness", 1),
+                new com.bewary.Models.Location(mLastLocation.getLatitude()+ .75, mLastLocation.getLongitude() - .2995),
+                new Date(),
+                new User("jane", "bob@gmail.com", "image.jpg"),
+                "Sarah Taylor was harassed by a homeless person yesterday. Take 4th Ave. to avoid this area."));
+
+        events.add(new Event(
+                new EventType("Homelessness", 1),
                 new com.bewary.Models.Location(mLastLocation.getLatitude()- .25, mLastLocation.getLongitude() + .35),
                 new Date(),
                 new User("jane", "bob@gmail.com", "image.jpg"),
@@ -82,7 +110,7 @@ public class MapActivity extends FragmentActivity implements GoogleApiClient.Con
                 "Dan Brown was robbed earlier this week and the perpetrator is still at large. You might  want to avoid this area today."));
 
         mMap.setOnMapClickListener(new OnEventClickListener(events, findViewById(R.id.mapp_view_root), this));
-
+        mMap.setOnMapLongClickListener(new OnIntentToCreateEvent(findViewById(R.id.mapp_view_root), this));
         for(Event event: events){
             int color;
             switch(event.getEventType().getLevel()){

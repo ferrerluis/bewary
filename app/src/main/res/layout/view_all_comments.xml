@@ -12,7 +12,7 @@
             <ImageView android:layout_width="wrap_content" android:layout_alignParentRight="true" android:layout_height="wrap_content"
                        android:contentDescription="Close view all comments"
                        android:src="@drawable/ic_close"
-                       android:layout_paddingTop="15dp"
+                       android:paddingTop="15dp"
                        android:paddingRight="25dp"
                        android:id="@+id/close_all_comment_btn"
                     />
