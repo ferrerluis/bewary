@@ -11,8 +11,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingTop="15dp"
             android:id="@+id/card_view_layout"
+            android:paddingTop="15dp"
             android:paddingBottom="15dp"
             android:paddingLeft="25dp"
             android:paddingRight="25dp"
@@ -56,23 +56,25 @@
                 android:layout_height="wrap_content"
                 android:text="Hi there"
                 android:id="@+id/event_view_date"/>
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_alignParentRight="true">
+                <ImageView
+                        android:padding="8dp"
+                        android:id="@+id/create_event_comment"
+                        android:contentDescription="Make a comment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_comment"/>
+                <ImageView
+                        android:padding="8dp"
+                        android:id="@+id/view_event_comment"
+                        android:contentDescription="View all comments"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_menu"/>
+            </LinearLayout>
 
-            <ImageView
-                    android:padding="8dp"
-                    android:id="@+id/create_event_comment"
-                    android:contentDescription="Make a comment"
-                    android:layout_width="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_comment"/>
-            <ImageView
-                    android:padding="8dp"
-                    android:id="@+id/view_event_comment"
-                    android:contentDescription="View all comments"
-                    android:layout_width="wrap_content"
-                    android:layout_alignLeft="@id/create_event_comment"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_comment"/>
+
         </RelativeLayout>
 
 
