@@ -10,6 +10,15 @@ public class Event {
     private User user;
     private String description;
 
+    public Event(EventType eventType, Location location, Date date, User user, String description) {
+        this.eventType = eventType;
+        this.location = location;
+        this.date = date;
+        this.user = user;
+        this.description = description;
+        this.id = 0;
+    }
+
     public int getId() {
         return id;
     }

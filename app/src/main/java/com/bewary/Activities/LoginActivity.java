@@ -1,5 +1,6 @@
 package com.bewary.Activities;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -12,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import com.bewary.Map.MapActivity;
 import com.bewary.R;
 import com.bewary.Utils.SharedPreferenceHelper;
 import com.bewary.Utils.UserInfoFetcher;
@@ -59,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
                     .show();
         }
 
-        Intent intent = new Intent(this, MapsActivity.class);
+        Intent intent = new Intent(this, MapActivity.class);
         startActivity(intent);
 
         InputMethodManager inputManager = (InputMethodManager) this.getSystemService(Context.INPUT_METHOD_SERVICE);

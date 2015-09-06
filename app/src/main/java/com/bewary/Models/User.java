@@ -6,6 +6,13 @@ public class User {
     private String email;
     private String imageURL;
 
+    public User(String name, String email, String imageURL) {
+        this.id = 0;
+        this.name = name;
+        this.email = email;
+        this.imageURL = imageURL;
+    }
+
     public int getId() {
         return id;
     }
