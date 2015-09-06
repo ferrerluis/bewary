@@ -57,8 +57,8 @@ public class MapActivity extends FragmentActivity implements GoogleApiClient.Con
         final NotificationCompat.Builder mBuilder =
                 (NotificationCompat.Builder) new NotificationCompat.Builder(this)
                         .setSmallIcon(R.drawable.ic_exclamation)
-                        .setContentTitle("My notification")
-                        .setContentText("Hello World!");
+                        .setContentTitle("Sketchy Area")
+                        .setContentText("You're heading right for an area that has been marked dangerous. You might want to go through 5th street instead.");
 // Creates an explicit intent for an Activity in your app
         Intent resultIntent = new Intent(this, MapActivity.class);
 

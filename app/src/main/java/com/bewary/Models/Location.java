@@ -1,9 +1,10 @@
 package com.bewary.Models;
 
 import com.google.android.gms.maps.model.LatLng;
+import com.parse.ParseGeoPoint;
 
 public class Location {
-    private int id;
+
     private double latitude;
     private double longitude;
 
@@ -16,6 +17,8 @@ public class Location {
     public int getId() {
         return id;
     }
+    public Location() {
+    }
 
     public double getLatitude() {
         return latitude;
@@ -23,6 +26,11 @@ public class Location {
 
     public double getLongitude() {
         return longitude;
+    }
+
+    public ParseGeoPoint getGeoPoint() {
+
+        return new ParseGeoPoint(getLatitude(), getLongitude());
     }
 
     public LatLng getLatLng(){

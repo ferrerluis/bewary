@@ -1,7 +1,7 @@
 package com.bewary.Models;
 
 public class EventType {
-    private int id;
+
     private String name;
     private int level;
 
@@ -13,6 +13,8 @@ public class EventType {
 
     public int getId() {
         return id;
+    }
+    public EventType() {
     }
 
     public String getName() {
