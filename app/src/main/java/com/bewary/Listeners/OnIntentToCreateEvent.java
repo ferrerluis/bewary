@@ -50,7 +50,8 @@ public class OnIntentToCreateEvent implements GoogleMap.OnMapLongClickListener{
             verifyView.findViewById(R.id.verify_confirm).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ((ViewGroup) mapView.findViewById(R.id.map_top_info_pane)).removeAllViews();
+                    ViewGroup parent = (ViewGroup) mapView.findViewById(R.id.map_top_info_pane);
+                    parent.removeAllViews();
                     GoogleMap map = ((SupportMapFragment) context.getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
                     map.addMarker(new MarkerOptions().position(latLng));
                     CircleOptions circleOptions = new CircleOptions()
@@ -60,7 +61,8 @@ public class OnIntentToCreateEvent implements GoogleMap.OnMapLongClickListener{
                             .radius(900.34); // In meters
 
                     map.addCircle(circleOptions);
-                    ((ViewGroup) mapView.findViewById(R.id.map_top_info_pane)).addView(View.inflate(context, R.layout.form_create_event, null));
+
+                    parent.addView(View.inflate(context, R.layout.form_create_event, null));
 
                     mapView.findViewById(R.id.create_event_submit).setOnClickListener(new View.OnClickListener() {
                         @Override

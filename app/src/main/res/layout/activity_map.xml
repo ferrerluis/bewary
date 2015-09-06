@@ -10,12 +10,13 @@
               tools:context=".MapsActivity"
               android:name="com.google.android.gms.maps.SupportMapFragment"/>
 
-    <RelativeLayout android:id="@+id/map_top_info_pane"
+    <LinearLayout android:id="@+id/map_top_info_pane"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
+                  android:orientation="vertical"
             android:layout_gravity="top">
 
-    </RelativeLayout>
+    </LinearLayout>
     <RelativeLayout
             android:id="@+id/map_bottom_info_pane"
             android:layout_width="fill_parent"

@@ -21,14 +21,14 @@ public class MapInfoPane {
     private View mapView;
     private Context context;
     private RelativeLayout bottomPane;
-    private RelativeLayout topPane;
+    private ViewGroup topPane;
 
     public MapInfoPane(View mapView, Context context) {
         this.mapView = mapView;
         this.context = context;
 
         bottomPane = (RelativeLayout) this.mapView.findViewById(R.id.map_bottom_info_pane);
-        topPane = (RelativeLayout) this.mapView.findViewById(R.id.map_top_info_pane);
+        topPane = (ViewGroup) this.mapView.findViewById(R.id.map_top_info_pane);
     }
 
     public void addCard(String title, String description, String date){
